@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script src="
+    https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js
+    "></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Graficacion</title>
+</head>
+<body>
+    <section>
+        <h1>Datos</h1>
+        
+        <form id="datos">
+            <input type="text" id="dato1" placeholder="Ingrese un dato"><br>
+            <input type="text"  id="dato2" placeholder="Ingrese un dato"><br>
+            <input type="text"  id="dato3" placeholder="Ingrese un dato"><br>
+            <input type="text"  id="dato4" placeholder="Ingrese un dato"><br>
+            <input type="text"  id="dato5" placeholder="Ingrese un dato">
+        </form>
+
+        <form id="valores">
+            <input id="valor1" placeholder="Ingrese un valor"><br>
+            <input id="valor2" placeholder="Ingrese un valor"><br>
+            <input id="valor3" placeholder="Ingrese un valor"><br>
+            <input id="valor4" placeholder="Ingrese un valor"><br>
+            <input id="valor5" placeholder="Ingrese un valor">
+        </form>
+
+    </section> 
+
+    <section id="content">
+        <canvas id="miGrafica" width="400" height="400"></canvas>
+    </section>
+
+<script>
+        const  graf = document.getElementById('miGrafica').getContext;
+let dat1 = document.getElementById('dato1');
+let dat2 = document.getElementById('dato2');
+let dat3 = document.getElementById('dato3');
+let dat4 = document.getElementById('dato4');
+let dat5 = document.getElementById('dato5');
+
+let val1 = document.getElementById('valor1');
+let val2 = document.getElementById('valor2');
+let val3 = document.getElementById('valor3');
+let val4 = document.getElementById('valor4');
+let val5 = document.getElementById('valor5');
+
+const categoria = ['pablo','juan','pedro','maria','ana'];
+const valores = [32,15,
+18,20,16];
+
+const myChart = new Chart(graf,{
+    type:'bar',
+    data:{
+        labels: categoria,
+        datasets:[{
+            label:'GRAFICOS',
+            data:valores,
+            backgroundColor:[
+                'rgba(218, 247, 166,0.2)',
+                'rgba(255, 195, 0,0.2)',
+                'rgba(255, 87, 51,0.2)',
+                'rgba(199, 0, 57,0.2)',
+                'rgba(144, 12, 63,0.2)'
+            ],
+            borderColor:[
+                'rgba(218, 247, 166,1)',
+                'rgba(255, 195, 0,1)',
+                'rgba(255, 87, 51,1)',
+                'rgba(199, 0, 57,1)',
+                'rgba(144, 12, 63,1)'
+            ],
+            borderWidth: 1.5
+        }]
+    }
+});
+    </script>
+</body>
+</html>
